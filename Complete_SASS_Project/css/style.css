@@ -1,0 +1,152 @@
+/*
+COLORS:
+Light Green:#7ed56f
+Medium Green:#55c57a
+Dark Green:#28b485
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+
+}
+/*
+    Body Declaring
+*/
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+.header{
+    height: 95vh;
+    /*95% viewpoint height*/
+    background-image:linear-gradient(
+        to right bottom,
+         rgba(127, 216, 111, 0.8),
+         rgba(40,180,131,0.8)) ,
+    url(../img/Header_3.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    /*This clip the total size into given size in the input section*/
+    position: relative;
+}
+
+.logo-box{
+    position: absolute;
+    top: 0px;
+    bottom: 40px; 
+}
+
+.logo{
+    height: 140px;
+}
+/*
+.logo:hover{
+    animation: MoveInLeft 1.5s ease-out;
+}
+*/
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary{
+    color:#FFF;
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
+    /*Reduce the animation shaking internally*/
+}
+
+.heading-primary-main{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+/*Animation name declaration & Transition time*/
+    
+animation: MoveInLeft 1.5s ease-out;
+    /* 
+    {ALL WE CAN WRITE UNDER SINGLE ANIMATION FUNCTION WITHOUT DIFFERENT TYPE OF KEYWORD}
+    animation: MoveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    
+    [ ease-out= fast to slow
+        ease-in= slow to fast]
+        
+        animation-iteration-count: 2;
+    */
+}
+
+.heading-primary-sub{
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+    animation: MoveInRight 1.5s ease-out;
+/*
+    animation: MoveInRight;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    
+    animation-iteration-count: 3;
+    animation-delay: 0.5s;
+    */
+
+
+}
+
+@keyframes MoveInLeft{
+/*Calling through animation name*/
+    0%{
+        opacity: 0;
+        transform: translateX(-100px), rotate(0deg);
+
+    }
+
+    50%{
+        transform: translateY(10px);
+
+    }
+    75%{
+        
+        transform: translateX(10px);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px);
+
+    }
+}
+@keyframes MoveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    75%{
+        transform: translateX(-10px);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px);
+
+    }
+}
